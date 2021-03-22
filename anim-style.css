@@ -1,0 +1,43 @@
+body { margin-top: 100px; background-color: #137b85; color: #fff; text-align:center; }
+
+h1 {
+  font: 2em 'Roboto', sans-serif;
+  margin-bottom: 40px;
+}
+
+#spinner-container {
+    
+  display: block;
+  margin-left: 50%;
+  margin-right: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.loading {
+  position: absolute;
+  
+  animation-name: spin;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.load-border {
+    border: 5px solid rgba(255,255,255,.1);
+    border-top-color: #fff;
+}
+
+.spindot {
+    border-radius: 50%;
+    position: absolute;
+    
+    display: inline;
+    background: white;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
