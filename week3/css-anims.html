@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+#div1
+{
+position: relative;
+height: 220px;
+width: 220px;
+margin: 100px;
+padding:10px;
+border: 1px solid black;
+}
+
+#div2
+{
+padding: 35px;
+position: absolute;
+border: 1px solid black;
+background-color: red;
+font-size:large;
+animation: mytry 8s;
+-webkit-animation: mytry 8s; /* Safari and Chrome */
+animation-iteration-count: infinite;
+}
+@keyframes mytry
+{
+0% { transform: rotate(0deg);
+transform-origin:20% 40%;
+-ms-transform: rotate(45deg); /* IE 9 */
+-ms-transform-origin:20% 40%; /* IE 9 */
+-webkit-transform: rotate(0deg); /* Safari and Chrome */
+-webkit-transform-origin:20% 40%; }
+50% {
+	transform: rotate(145deg);
+transform-origin:40% 80%;
+-ms-transform: rotate(145deg); /* IE 9 */
+-ms-transform-origin:40% 80%; /* IE 9 */
+-webkit-transform: rotate(145deg); /* Safari and Chrome */
+-webkit-transform-origin:40% 80%;
+	}
+	100% { transform: rotate(0deg);
+transform-origin:20% 40%;
+-ms-transform: rotate(0deg); /* IE 9 */
+-ms-transform-origin:20% 40%; /* IE 9 */
+-webkit-transform: rotate(0deg); /* Safari and Chrome */
+-webkit-transform-origin:20% 40%; }
+}
+#div3
+{
+width:100px;
+height:100px;
+background:blue;
+animation: myfirst 5s;
+-webkit-animation: myfirst 5s; /* Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+from {background:blue;}
+to {background:yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:blue;}
+to {background:yellow;}
+}
+#div4
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation: myGoodOne 10s;
+-webkit-animation: myGoodOne 10s; /* Safari and Chrome */
+animation-iteration-count: 3;
+}
+
+@keyframes myGoodOne
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+@-webkit-keyframes myGoodOne /* Safari and Chrome */
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+#div5
+{
+width:200px;
+height:100px;
+background:green;
+animation:changefont 15s;
+-webkit-animation:changefont 15s; /* Safari and Chrome */
+}
+
+@keyframes changefont
+{
+from {font-size:small; opacity:0.5;}
+to {font-size:xx-large;opacity:1;}
+}
+
+@-webkit-keyframes changefont /* Safari and Chrome */
+{
+from {font-size:small;opacity:0.5;}
+to {font-size:xx-large;opacity:1;}
+}
+</style>
+</head>
+<body>
+<table><tr><td><div id="div1">
+  <div id="div2">
+    <p>Hello IWD Students!</p>
+    <p> It is HTML5!</p>
+    <p>CSS- only !</p>
+  </div></div></td>
+  <td><div id="div3"> Changing colour </div></td><td><div id="div5"> Hello Unitec </div></td> 
+  <td><div id="div4"> Animation (colours and position) </div></td></tr></table>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+ 
+http://www.w3schools.com/css3/css3_animations.asp
+</body>
+</html>
+
