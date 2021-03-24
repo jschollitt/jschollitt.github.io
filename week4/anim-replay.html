@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+        <style>
+            #myHide {
+                width: 0px;
+                height: 0px;
+                background-color:blue;
+                
+            }
+
+            #example_path {
+                position: relative;
+                overflow: hidden;
+                width: 880px;
+                height: 780px;
+                border: 1px solid #000;
+                background:url(images/flowers-daizy.JPG);
+            }
+
+            #example_path .example_block {
+                position: absolute;
+                background:url(images/butterfly.gif);
+                background-repeat:no-repeat;
+
+                width: 100px;
+                height: 100px;
+                
+                padding-top: 10px;
+                text-align: center;
+                color: #fff;
+                font-size: 10px;
+                white-space: nowrap;
+                
+            }
+
+            #example_path .myButton {
+                border: none;
+                background-color: inherit;
+                padding: 14px 28px;
+                font-size: 16px;
+                cursor: pointer;
+                display: inline-block;
+            }
+        </style>
+        <script >
+        var snd = new Audio('images/swan_lake.mp3');
+        snd.load();
+
+        function move() {
+        var elem = document.getElementById("gr");
+            var left = 0;
+            var top = 0;
+            var point=0;
+            var elem2 = document.getElementById("myHide");
+            
+        function doMove() {
+            
+                switch (point) {
+                    case 0: // + 
+                        left++;  // update parameters 
+                        top++;
+                        elem.style.left = left + 'px'; // show frame 
+                        elem.style.top = top + 'px'; 
+                        if (left >300)  
+                        {
+                            point=1;
+                        }
+                        
+                        break;
+                    case 1: // -
+                        left--;  // update parameters		
+                        elem.style.left = left + 'px'; // show frame 
+                        if (left <20) {
+                            point=2;  //check finish condition
+                        }				
+                        elem2.style.width = '880px';
+                        elem2.style.height= '780px';
+                        break;
+                    case 2: // *
+                        left++;  // update parameters		
+                        top=top + 0.4;
+                        elem.style.left = left + 'px'; // show frame 
+                        elem.style.top = top + 'px'; 
+                        if (top >580) {
+                            clearInterval(id);// check finish condition
+                            snd.pause();
+                        }	
+                        elem2.style.width = '0px';
+                        elem2.style.height= '0px';
+                        break;		
+                } 	 
+        }
+        var id = setInterval(doMove, 10) // draw every 10ms
+        }
+
+
+
+    </script>
+    </head>
+    <body onload="move()">
+        <button type="button" onclick="snd.play(); move();" class ="myButton">@</button>
+        <div onclick="move()" id="example_path"><div  id="myHide">
+        <div style="left: 10px; top: 10px;" class="example_block" id="gr"></div></div>
+        </div>
+    </body>
+</html>
+

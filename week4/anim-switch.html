@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<style>
+.example_path {
+	position: relative;
+	overflow: hidden;
+	width: 880px;
+	height: 780px;
+	border: 1px solid #000;
+	background:url(images/flowers-daizy.JPG);
+}
+
+.example_path .example_block {
+	position: absolute;
+	background:url(images/butterfly.gif);
+	background-repeat:no-repeat;
+
+	width: 100px;
+	height: 100px;
+	
+	padding-top: 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+	white-space: nowrap;
+}
+</style>
+<script type="text/javascript">
+function move(elem) {
+
+  	var left = 0;
+	var top = 0;
+	var point=0;
+	var snd = new Audio('images/swan_lake.mp3');
+	snd.load();
+  function doMove() {
+  snd.play();
+		switch (point) {
+			case 0: // + 
+				left++;  // update parameters 
+				top++;
+				elem.style.left = left + 'px'; // show frame 
+				elem.style.top = top + 'px'; 
+				if (left >300)  
+				{
+					point=1;
+				}
+				break;
+			case 1: // -
+				left--;  // update parameters		
+				elem.style.left = left + 'px'; // show frame 
+				if (left <20) {
+					point=2;  //check finish condition
+				}
+				break;
+			case 2: // *
+				left++;  // update parameters		
+				top=top + 0.4;
+				elem.style.left = left + 'px'; // show frame 
+				elem.style.top = top + 'px'; 
+				if (top >580) {
+					clearInterval(id);// check finish condition
+					snd.pause();
+				}	
+				break;		
+		} 	 
+  }
+  var id = setInterval(doMove, 10) // draw every 10ms
+}
+
+
+
+</script>
+</head>
+<body>
+<div onclick="move(this.children[0])" class="example_path">
+ <div style="left: 10px; top: 10px;" class="example_block" id="gr"></div>
+</div>
+
+
+</body></html>
+

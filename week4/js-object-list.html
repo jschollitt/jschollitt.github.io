@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example Object</title>
+</head>
+
+<body>
+<p>
+  <script>
+function person(first, last, age, eye) {
+    				this.firstName = first;
+   					this.lastName = last;
+    				this.age = age;  
+    				this.eyeColor = eye;  				
+    				//this.sayPersonName = function(){ alert("First name  is "+ 													this.firstName );}
+		}	
+		var myStudent = new person("John", "Doe", 20, "blue");
+		var myOtherStudent = new person("Sally", "Rally", 18,  "green");
+		var myBestStudent = new person("Mary", "Green", 21,  "brown");
+	var students = [myStudent, myOtherStudent, myBestStudent];
+	
+	function show_students() {
+	var displaytext='<b>List of students </b>,  number=' + students.length + '<br/>';	
+
+		for(var i=0; i < students.length; i++ ) {
+			displaytext =displaytext + '<br/ > ' + students[i].firstName  + ' ' + students[i].lastName  + ' age: '; 
+			displaytext =displaytext + students[i].age + ' eye colour: ' +students[i].eyeColor + '<hr> ';
+
+
+		}
+		document.getElementById('disp').innerHTML=displaytext;
+	}
+	function add_student() {
+	var addOne= new person(document.getElementById('sFirstname').value, document.getElementById('sSecondname').value, document.getElementById('age').value, document.getElementById('eyeColor').value);
+		students.push(addOne);
+		var nn=students.length;
+	}
+
+</script><br/><br/><br/>
+</p>
+<table style="background: #C7F1EE" width="350px" border="0">
+  <tbody>
+    <tr>
+      <td style="text-align: right;"><label for="sFirstname">First Name</label></td>
+      <td><input id="sFirstname" type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;">Second Name</td>
+      <td ><input id="sSecondname" type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;"><label for="age2">Age</label></td>
+      <td><input id="age" type="number"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;"><label for="eyeColor2">eye Colour</label></td>
+      <td><input id="eyeColor" type="text"></td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" onclick="add_student()">Add student</button><br/>
+<hr>
+
+<button type="button" onclick="show_students()">display all students</button>
+<p id="disp"></p>
+<br/><br/>
+
+</body>
+</html>
+
