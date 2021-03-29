@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Changing CSS extern file using only JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="css/positive.css"/>
+    <script type="text/javascript">
+      function changeCSS(cssFile) {
+ 
+        var oldlink = document.getElementsByTagName("link").item(0);
+ 
+        var newlink = document.createElement("link")
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", cssFile);
+ 
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#" onclick="changeCSS('css/positive.css');">STYLE 1</a>
+    <a href="#" onclick="changeCSS('css/negative.css');">STYLE 2</a>
+    <div class="box"><h2>What are some good ways to learn JavaScript?</h2>
+    
+    <p>&nbsp;</p>
+    <ol>
+      <li>You Don't Know JS (github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch2.md)</li>
+      <li>Eloquent JS (eloquentjavascript.net/)</li>
+      <li>Free Code Camp (www.freecodecamp.com)</li>
+      <li>Team Treehouse (www.teamtreehouse.com)</li>
+      <li>Codewars (codewars.com)</li>
+      <li>CodeCloud (CodeCloud.me)</li>
+      <li>TheCodePlayer (Learn HTML5, CSS3, Javascript)</li>
+      <li>Javascript by Douglas Crockford (Douglas Crockford's Javascript)</li>
+      <li>Udacity (JavaScript Basics for Beginners Course)</li>
+    </ol>
+    
+    </div>
+  <img src="images/js-functions.png" alt="YouDon'tKnowJS functions screenshot"/>
+  </body>
+</html>
