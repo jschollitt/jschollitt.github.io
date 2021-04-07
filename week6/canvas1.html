@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/canvas1.css">
+    <title>canvas example 4</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div class="slidecontainer">
+            <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="SliderUpdate(this)">
+        </div>
+        <canvas id="canvas1" width="600" height="600">
+            Your browser doesn't support the canvas! Try another browser.
+        </canvas>
+    </div>
+
+
+</body>
+<script>
+    var mycanvas = document.getElementById("canvas1");
+    var cntx = mycanvas.getContext('2d');
+
+    var canvasWidth = document.getElementById("canvas1").clientWidth;
+    var canvasHeight = document.getElementById("canvas1").clientHeight;
+    var halfWidth = canvasWidth * 0.5;
+    var halfHeight = canvasHeight * 0.5;
+
+    let mygradient = null;
+    
+
+    let mygradient2 = null;
+    
+
+    let mygradient3 = null;
+    
+
+    let mygradient4 = null;
+
+
+    DrawGradients(1,1);
+
+    function DrawGradients(widthMul, heightMul) {
+        cntx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        var w = halfWidth * widthMul;
+        var h = halfHeight * heightMul;
+
+        RecalcGradients(w * 2, h * 2);
+
+        cntx.fillStyle = mygradient;
+        cntx.fillRect(0, 0, w, h);
+        cntx.fillStyle = mygradient2;
+        cntx.fillRect(w, 0, w, h);
+        cntx.fillStyle = mygradient3;
+        cntx.fillRect(0, h, w, h);
+        cntx.fillStyle = mygradient4;
+        cntx.fillRect(w, h, w, h);
+    }
+
+    function RecalcGradients(width, height) {
+        
+        mygradient = cntx.createLinearGradient(0, 0, width, height);
+        mygradient.addColorStop(0, "#ffffff");
+        mygradient.addColorStop(0.5, "#111111");
+        mygradient.addColorStop(1, "#000000");
+
+        mygradient2 = cntx.createLinearGradient(width, 0, 0, height);
+        mygradient2.addColorStop(0, "#ffffff");
+        mygradient2.addColorStop(0.5, "#111111");
+        mygradient2.addColorStop(1, "#000000");
+
+        mygradient3 = cntx.createLinearGradient(0, height, width, 0);
+        mygradient3.addColorStop(0, "#ffffff");
+        mygradient3.addColorStop(0.5, "#111111");
+        mygradient3.addColorStop(1, "#000000");
+
+        mygradient4 = cntx.createLinearGradient(width, height, 0, 0);
+        mygradient4.addColorStop(0, "#ffffff");
+        mygradient4.addColorStop(0.5, "#111111");
+        mygradient4.addColorStop(1, "#000000");
+    }
+
+    function SliderUpdate(slider) {
+        DrawGradients(slider.value / 100, slider.value / 100);
+    }
+
+</script>
+
+</html>
