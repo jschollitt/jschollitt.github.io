@@ -26,7 +26,7 @@ class GameObject
         return (this.y + this.height);
     }
 
-    draw(){};
+    draw(context){};
     update(secondsPassed){};
 }
 
