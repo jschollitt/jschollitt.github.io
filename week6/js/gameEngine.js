@@ -1,3 +1,5 @@
+// @ts-check
+
 class GameEngine {
 
     constructor(canvas, window) {
@@ -9,7 +11,8 @@ class GameEngine {
         this.oldTimeStamp = 0;
         this.fps = 0;
         
-        this.gameObjects = new Array();
+        this.squaresize = 100;
+        this.squares = new Array();
         
         this.gameLoop = this.gameLoop.bind(this);
         this.update = this.update.bind(this);
@@ -20,6 +23,10 @@ class GameEngine {
         this.checkWallCollisions = this.checkWallCollisions.bind(this);
         this.checkObjectCollisions = this.checkObjectCollisions.bind(this);
         this.rectIntersect = this.rectIntersect.bind(this);
+        this.getX = this.getX.bind(this);
+        this.getY = this.getY.bind(this);
+        this.getRandomInRange = this.getRandomInRange.bind(this);
+        
         var temp = this;
         this.canvas.addEventListener("mousedown", function(e){temp.doMouseDown(e)}, false);
         this.canvas.addEventListener("keydown", function(e){temp.doKeyDown(e)}, false);
@@ -35,35 +42,35 @@ class GameEngine {
 
         // Calculate fps
         this.fps = Math.round(1 / this.secondsPassed);
-        //console.log(this.secondsPassed.toString());
         this.update(this.secondsPassed);
         // Perform the drawing operation
         this.draw();
 
-        // The loop function has reached it's end. Keep requesting new frames
+        // The loop function has reached it's end. Request a new frame
         this.window.requestAnimationFrame(this.gameLoop);
     }
 
     update(secondsPassed) {
         this.checkCollisions();
-        for (var i = 0; i < this.gameObjects.length; i++) {
-            (this.gameObjects[i]).update(secondsPassed);
+        for (var i = 0; i < this.squares.length; i++) {
+            (this.squares[i]).update(secondsPassed);
         }
     }
 
     draw() {
         this.context.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
         
-        for (var i = 0; i < this.gameObjects.length; i++) {
-            (this.gameObjects[i]).draw(this.context);
+        for (var i = 0; i < this.squares.length; i++) {
+            this.squares[i].draw(this.context);
         }
 
-        // Draw number to the screen
+        // Draw FPS counter to the screen
         this.context.fillStyle = 'white';
         this.context.fillRect(0, 0, 120, 50);
         this.context.font = '25px Arial';
         this.context.fillStyle = 'black';
         this.context.fillText("FPS: " + this.fps, 10, 30);
+        /////////////////////////////////
     }
 
     doMouseDown(event) {
@@ -71,17 +78,18 @@ class GameEngine {
         switch (event.button) {
             case 0:
                 var rect = this.canvas.getBoundingClientRect();
-                this.gameObjects.push(
+                this.squares.push(
                     new Square(
                         null,
-                        event.clientX - rect.left, 
-                        event.clientY - rect.top,
-                        Math.random() * 100 - 5,
-                        Math.random() * 100 - 5,
-                        100,
-                        100
+                        this.getX(event), 
+                        this.getY(event), 
+                        this.getRandomInRange(-50, 50), 
+                        this.getRandomInRange(-50, 50), 
+                        this.squaresize, 
+                        this.squaresize
                     )
                 )
+                console.log(this.squares);
                 break;
         
             default:
@@ -91,24 +99,24 @@ class GameEngine {
 
     doKeyDown(event) {
         switch (event.key) {
-            case ArrowUp:
-                //xStep *= 1.1;
-                //yStep *= 1.1;
+            case "ArrowUp":
+                // call method for up action
                 break;
-            case ArrowDown:
-                //xStep *= 0.91;
-                //yStep *= 0.91;
+            case "ArrowDown":
+                // call method for down action
                 break;
             default:
-                //
+                // default action, fallback
                 break;
         }
     }
 
     checkCollisions() {
-        for (var i = 0; i < this.gameObjects.length; i++) {
-            this.checkWallCollisions(this.gameObjects[i]);
-            this.checkObjectCollisions(this.gameObjects[i], i);
+        for (var i = 0; i < this.squares.length; i++) {
+            // for each square, check the wall overlaps
+            this.checkWallCollisions(this.squares[i]);
+            // for each square, check for overlaps with other squares
+            this.checkObjectCollisions(this.squares[i], i);
         }
         
     }
@@ -116,12 +124,10 @@ class GameEngine {
     checkWallCollisions(object) {
         // check right and left wall overlap
         if (object.getRight() >= this.canvas.clientWidth) {
-            //console.log("wall");
             object.vx = -object.vx;
             object.x = this.canvas.clientWidth - object.width - 1;
         }
         else if (object.x <= 0) {
-            //console.log("wall");
             object.vx = -object.vx;
             object.x = 1;
         }
@@ -132,32 +138,29 @@ class GameEngine {
             object.y = this.canvas.clientHeight - object.height - 1;;
         }
         else if (object.y <= 0) {
-            //console.log("wall");
             object.vy = -object.vy;
             object.y = 1;
         }
-        
-
-        
     }
 
     checkObjectCollisions(object, index) {
-        for (var i = 0; i < this.gameObjects.length; i++) {
-            if (object !== this.gameObjects[i])
+        // check parameter square against all other squares
+        for (var i = 0; i < this.squares.length; i++) {
+            if (object !== this.squares[i])
             {
                 var isCol = this.rectIntersect(
                     object.x, 
                     object.y, 
                     object.width,
                     object.height,
-                    this.gameObjects[i].x,
-                    this.gameObjects[i].y,
-                    this.gameObjects[i].width,
-                    this.gameObjects[i].height
+                    this.squares[i].x,
+                    this.squares[i].y,
+                    this.squares[i].width,
+                    this.squares[i].height
                     );
                     object.isColliding = isCol;
                     if (isCol) {
-                        (this.gameObjects[i]).isColliding = isCol;
+                        (this.squares[i]).isColliding = isCol;
                         break;
                     } 
             }
@@ -170,5 +173,19 @@ class GameEngine {
             return false;
         }
         return true;
+    }
+
+    getX(event) {
+        var rect = this.canvas.getBoundingClientRect();
+        return event.clientX - rect.left;
+    }
+
+    getY(event) {
+        var rect = this.canvas.getBoundingClientRect();
+        return event.clientY - rect.top;
+    }
+
+    getRandomInRange(min, max) {
+        return Math.random() * (Math.abs(min) + max) + min;
     }
 }
