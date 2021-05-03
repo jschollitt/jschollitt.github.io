@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="addSound(true)">Add visible sound</button>
+    <button onclick="addSound(false)">Add visible sound</button>
+  </body>
+  <script>
+    function addSound(vis) {
+      var x = document.createElement("AUDIO");
+      x.setAttribute("src", "audio/Kalinka.mp3");
+      if (vis) {
+        x.setAttribute("controls", "controls");
+      }
+      document.body.appendChild(x);
+      x.play();
+    }
+  </script>
+</html>
