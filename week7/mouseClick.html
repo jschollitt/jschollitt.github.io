@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: grey;
+      }
+      canvas {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="800" height="600">
+      Your browser does not support canvas elements.
+    </canvas>
+  </body>
+  <script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    canvas.addEventListener("mousedown", click, false);
+
+    function click(event) {
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, 2 * Math.PI, true);
+      ctx.closePath();
+      ctx.fillStyle = "#ff8080";
+      ctx.fill();
+    }
+  </script>
+</html>
