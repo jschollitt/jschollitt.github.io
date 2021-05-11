@@ -38,6 +38,9 @@ class Square extends GameObject
         // Set default width and height
         this.width = width;
         this.height = height;
+        this.lifecycle = 0;
+        this.rad = 0;
+        this.sizeDelta = 5;
 
         this.draw = this.draw.bind(this);
         this.update = this.update.bind(this);
@@ -58,6 +61,25 @@ class Square extends GameObject
         this.x += this.vx * secondsPassed;
         this.y += this.vy * secondsPassed;
         //console.log(this.x + ", " + this.y);
+        if (this.lifecycle == 0)
+        {
+            this.rad += this.sizeDelta;
+            this.x += this.vx;
+            if (this.rad > 50)
+                this.lifecycle = 1;
+        }
+        else if (this.lifecycle == 1)
+        {
+            // do shrink
+            // check if min size
+            //      change lifecycle stage
+        }
+        else if (this.lifecycle == 2)
+        {
+            // do relocate
+            // set lifecycle 0
+        }
+
     }
 
     setVelocity(vx, vy){

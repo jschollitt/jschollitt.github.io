@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Images</title>
+    <style>
+        canvas {
+            background-image:url("images/beach.jpg");
+            background-size: 1280px 720px;
+        }
+    </style>
+</head>
+<body>
+    <div><button id="btn">Click to update canvas</button></div>
+    <canvas id="myCanvas" width=1280 height=720>
+        Your web browser does not support canvas elements.
+    </canvas>
+    <div style="display: none;">
+        <!--https://www.freepik.com/vectors/water' Water vector created by ddraw - www.freepik.com-->
+        <img src="images/gameChar.png" id="gameChar">    
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext('2d');
+    
+    var loadImage = new Image();
+    loadImage.onload = function() {
+        ctx.drawImage(loadImage, 300, 300, 136, 100);
+    }
+    loadImage.src = "images/gameChar2.png";
+
+    var char = document.getElementById("gameChar");
+    
+    ctx.drawImage(char, 0, 0, 136, 100);
+
+    function click() {
+        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        ctx.drawImage(loadImage, 300, 300, 136, 100);
+        ctx.drawImage(char, 0, 0, 136, 100);
+        console.log("click");
+    }
+    window.onload = function() {
+        document.getElementById("btn").click = click();
+    }
+
+</script>
+</html>
