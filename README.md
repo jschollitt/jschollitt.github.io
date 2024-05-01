@@ -1,1 +1,0 @@
-# jschollitt.github.io
