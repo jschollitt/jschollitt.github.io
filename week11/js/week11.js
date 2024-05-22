@@ -1,3 +1,4 @@
+let fileReader;
 document.onreadystatechange = () => {
 
     // Fix browser default behaviour to open dropped files
@@ -74,18 +75,15 @@ function setDropzoneHighlight(dropzones, state) {
     }
 }
 
-
-let fileobj;
-let fileReader;
 function uploadImage(file) {
-    if (!fileobj.type.includes('image')) {
+    if (!file.type.includes('image')) {
         return alert("Image file types only");
     }
-    if (fileobj.size > 10_000_000) {
+    if (file.size > 10_000_000) {
         return alert("File too large, please try a smaller image");
     }
 
-    fileReader.readAsDataURL(fileobj);
+    fileReader.readAsDataURL(file);
 }
 
 function dragoverImage() {
@@ -99,8 +97,8 @@ function dragleaveImage() {
 
 function dropImage(e) {
     e.preventDefault();
-    fileobj = e.dataTransfer.files[0];
-    uploadImage(fileobj);
+    let file = e.dataTransfer.files[0];
+    uploadImage(file);
     setDropzoneHighlight([document.getElementById('ex2dropzone')], false);
 }
 
@@ -109,8 +107,8 @@ function fileExplorer() {
 }
 
 function fileExplorerUpload() {
-    fileobj = document.getElementById('ex2fileInput').files[0];
-    uploadImage(fileobj);
+    let file = document.getElementById('ex2fileInput').files[0];
+    uploadImage(file);
 }
 
 function loadImage(e) {
