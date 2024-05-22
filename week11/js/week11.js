@@ -76,6 +76,9 @@ function setDropzoneHighlight(dropzones, state) {
 }
 
 function uploadImage(file) {
+    if (file === undefined || file === null) {
+        return alert("File Drag Drop unsupported.");
+    }
     if (!file.type.includes('image')) {
         return alert("Image file types only");
     }
