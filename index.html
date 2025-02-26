@@ -1,63 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>My first site</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>ISCG6420 Course Website</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles.css">
+
 </head>
-<header>
-    <nav>
-        <a href="./week1/semantic.html" class="button">Semantic</a>
-        <a href="./week2/week2.html" class="button">Week 2</a>
-        <a href="./week3/week3.html" class="button">Week 3</a>
-        <a href="./week4/week4.html" class="button">Week 4</a>
-        <a href="./week5/week5.html" class="button">Week 5</a>
-        <a href="./week6/week6.html" class="button">Week 6</a>
-        <a href="./week7/week7.html" class="button">Week 7</a>
-        <a href="./week8/week8.html" class="button">Week 8</a>
-        <a href="./week9/week9.html" class="button">Week 9</a>
-        <a href="./week11/week11.html" class="button">Week 11</a>
-        <a href="./week12/week12.html" class="button">Week 12</a>
-    </nav>
-</header>
+
 <body>
-    <div class="content">
-        <img class="image-large" src="./assets/computing.webp" alt="Computing Photo" />
-        <H2>My First Website: Web Development</H2>
-        <p>
-            Web development is the act of creating and maintaining websites and other web-based tools.
-            It involves the use of many technologies to build and deliver web pages and applications
-            to users. The scope of use is wide, allowing for a highly flexible, dynamic space for
-            innovation and long term sustainability.
-        </p>
-        <h2>Web Technologies</h2>
-        <table>
-            <thead><th class="third">Technology</th><th>Description</th></thead>
-            <tr><td>HTML</td><td>...</td></tr>
-            <tr><td>CSS</td><td>...</td></tr>
-            <tr><td>JS</td><td>...</td></tr>
-        </table>
-        <h2>Development Tools</h2>
-        <table>
-            <thead><th>Technology</th><th>Description</th></thead>
-            <tr><td>IDE</td><td>...</td></tr>
-            <tr><td>Git</td><td>...</td></tr>
-            <tr><td>Web Browser</td><td>...</td></tr>
-        </table>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Twelfth navbar example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10"
+                aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="sidebar">
-        <h1>ISCG6420</h1>
-        <h3>Internet & Website Development</h3>
-        <p>
-            IWD is a Level 6, second year course in the Bachelor of Computing Systems Graduate programme.
-            Enrolled students will learn to develop sofisticated enterprise websites using core web
-            technologies. This includes HTML, CSS, JS, jQuery, AJAX, XML, and JSON.
-        </p>
-    </div>
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="https://moodle.unitec.ac.nz/">Moodle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Test</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Content</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./week1/index.html">Week 1</a></li>
+                            <li><a class="dropdown-item" href="#">Week 2</a></li>
+                            <li><a class="dropdown-item" href="#">Week 3</a></li>
+                            <li><a class="dropdown-item" href="#">Week 4</a></li>
+                            <li><a class="dropdown-item" href="#">Week 5</a></li>
+                            <li><a class="dropdown-item" href="#">Week 6</a></li>
+                            <li><a class="dropdown-item" href="#">Week 7</a></li>
+                            <li><a class="dropdown-item" href="#">Week 8</a></li>
+                            <li><a class="dropdown-item" href="#">Week 9</a></li>
+                            <li><a class="dropdown-item" href="#">Week 10</a></li>
+                            <li><a class="dropdown-item" href="#">Week 11</a></li>
+                            <li><a class="dropdown-item" href="#">Week 12</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="./assets/img/unitec_logo.svg" alt="unitec_logo" width="572"
+                    height="157">
+                <h1 class="display-5 fw-bold text-body-emphasis">Internet & Website Development</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">ISCG6420 course homepage -- Semester 1 2025</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk1">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 1</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                    <li>Introduction to Website Development</li>
+                                    <li>HTML & CSS Fundamentals</li>
+                                    <li>Git</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk2">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 2</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk3">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 3</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk4">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 4</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk5">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 5</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk6">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 6</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk7">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 7</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk8">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 8</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk9">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 9</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk10">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 10</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk11">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 11</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm" id="wk12">
+                            <div class="bd-placeholder-img card-img-top colour-block text-center align-middle"
+                                width="100%" height="225">Week 12</div>
+                            <div class="card-body">
+                                <ul class="card-text">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="mb-1">ISCG6420 course website made by Jesse Schollitt using Bootstrap and Fontawesome</p>
+        </div>
+    </footer>
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/card-redirect.js"></script>
 </body>
-</html>
 
+</html>
