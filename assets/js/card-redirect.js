@@ -1,1 +1,2 @@
 document.querySelector('#wk1').addEventListener("click", (e) => window.location.replace("./week1/index.html"));
+document.querySelector('#wk2').addEventListener("click", (e) => window.location.replace("./week2/index.html"));

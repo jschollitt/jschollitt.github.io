@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>ISCG6420 Course Website</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Moodle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Test</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Content</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../week1/index.html">Week 1</a></li>
+                            <li><a class="dropdown-item" href="../week2/index.html">Week 2</a></li>
+                            <li><a class="dropdown-item" href="../week3/index.html">Week 3</a></li>
+                            <li><a class="dropdown-item" href="../week4/index.html">Week 4</a></li>
+                            <li><a class="dropdown-item" href="../week5/index.html">Week 5</a></li>
+                            <li><a class="dropdown-item" href="../week6/index.html">Week 6</a></li>
+                            <li><a class="dropdown-item" href="../week7/index.html">Week 7</a></li>
+                            <li><a class="dropdown-item" href="../week8/index.html">Week 8</a></li>
+                            <li><a class="dropdown-item" href="../week9/index.html">Week 9</a></li>
+                            <li><a class="dropdown-item" href="../week10/index.html">Week 10</a></li>
+                            <li><a class="dropdown-item" href="../week11/index.html">Week 11</a></li>
+                            <li><a class="dropdown-item" href="../week12/index.html">Week 12</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="col-lg-8 mx-auto p-4 py-md-5">
+            <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+                <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+
+                    <span class="fs-4">Week 2</span>
+                </a>
+            </header>
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-html5"></i> Semantic HTML</h1>
+                <p class="fs-5"><u>Semantic HTML elements</u> are elements that describe their intended
+                use with the tag name. The purpose of semantic elements are to make understanding the 
+                layout of a website easier, both to developers and applications alike. Semantic elements
+                play a major role in how accessible a website is, and how compatible it is with accessibility
+                tools such as text-to-speech and vision-impaired navigation.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML">MDN reference</a>
+
+                <iframe src="./semantic/semantic.html" title="semantic html"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-css"></i> Web page layouts</h1>
+                <p class="fs-5"><u>Web page layouts</u> are commonly modified in CSS using three main technology
+                     choices:</p>
+                <ul class="fs-5">
+                    <li>Float</li>
+                    <li>Grid</li>
+                    <li>Flexbox</li>
+                </ul>
+                <p class="fs-5">
+                    All three types are part of modern CSS3, but support for web browser versions varies. Most web
+                     browser versions from ~2017 onwards support all three layouts.
+                </p>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout">MDN reference</a>
+
+                <div class="container">
+                    <div class="d-flex flex-row justify-content-center">
+                        <h2 class="fs-2">Layout examples</h2>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center btn-row-spaced">
+                        <button id="btn-layout-float" class="btn btn-primary btn-lg" type="button">
+                            <a href="./layouts/floatlayout.html" target="_blank">Float layout</a>
+                        </button>
+                        <button id="btn-layout-float" class="btn btn-primary btn-lg" type="button">
+                            <a href="./layouts/gridlayout.html" target="_blank">Grid layout</a>
+                        </button>
+                        <button id="btn-layout-float" class="btn btn-primary btn-lg" type="button">
+                            <a href="./layouts/flexboxlayout.html" target="_blank">Flexbox layout</a>
+                        </button>
+                    </div>
+                </div>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-chart-line"></i> Animations</h1>
+                <p class="fs-5"><u>Website animations</u> can be achieved using CSS. A CSS Keyframe
+                    block can be defined with a collection of states. The keyframe can then be applied to a css
+                    selector along with values for animation speed, direction, progression, and iteration.</p>
+                <a href="https://www.w3schools.com/css/css3_animations.asp">W3Schools reference</a>
+
+                <hr class="col-3 col-md-2 mb-5">
+                
+                <div class="container">
+                    <div class="d-flex flex-row justify-content-center">
+                        <button id="btn-toggle-animation" class="btn btn-primary btn-lg" type="button">Toggle animations</button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div id="rotation-demo-1"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Rotate TL Corner
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="rotation-demo-2"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Rotate Centre
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="rotation-demo-3"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Rotate X-axis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="translation-demo-1"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Translate Left-Right
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="translation-demo-2"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Translate Up-Down
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="translation-demo-3"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Translate Path
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="skew-demo-1"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Skew Left-Right
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="skew-demo-2"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Skew Up-Down
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="skew-demo-3"
+                                class="card card-buttons flex-row justify-content-center align-items-center shadow-sm"
+                                id="wk1">
+                                <div class="bd-placeholder-img card-img colour-block text-center align-middle col-md-1">
+                                    Scale & Stretch
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="mb-1">ISCG6420 course website made by Jesse Schollitt using Bootstrap and Fontawesome</p>
+        </div>
+    </footer>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/toggleAnimation.js"></script>
+</body>
+
+</html>
