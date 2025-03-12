@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <script src="./calculator.js"></script>
+    <h2>JS Calculator Exercise</h2>
+        <table>
+          <thead>
+            <th>Number 1</th>
+            <th>Operator</th>
+            <th>Number 2</th>
+            <th></th>
+            <th>Result</th>
+          </thead>
+          <tr>
+            <td>
+              <input type="text" id="calcNum1" class="calc-input"/>
+            </td>
+            <td>
+              <button class="btn-operator" onclick="calculate('add')">Add</button>
+              <button class="btn-operator" onclick="calculate('sub')">Subtract</button>
+              <button class="btn-operator" onclick="calculate('mul')">Multiply</button>
+              <button class="btn-operator" onclick="calculate('div')">Divide</button>
+            </td>
+            <td>
+              <input type="text" id="calcNum2" class="calc-input"/>
+            </td>
+            <td>
+              =
+            </td>
+            <td>
+              <h3 id="calcResult"></h3>
+            </td>
+          </tr>
+        </table>
+  </body>
+</html>

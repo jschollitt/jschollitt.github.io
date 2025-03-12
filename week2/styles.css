@@ -288,7 +288,7 @@
   animation-iteration-count: var(--anim-count);
 }
 
-#scale-demo-1 {
+#skew-demo-3 {
   animation-name: scale;
   animation-timing-function: linear;
   animation-duration: 6s;
