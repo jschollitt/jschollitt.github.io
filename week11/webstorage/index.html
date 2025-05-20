@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./assets/js/script.js"></script>
+</head>
+
+<body>
+  <section class="txt-center">
+    <div id="ex3content" class="content">
+
+      <div class="container">
+        <label for="fname"><strong>First name</strong></label>
+        <input id="fname" type="text" placeholder="Enter first name" name="fname" required>
+        <label for="lname"><strong>Last name</strong></label>
+        <input id="lname" type="text" placeholder="Enter last name" name="lname" required>
+        <label for="mail"><strong>Email</strong></label>
+        <input id="email" type="text" placeholder="Enter Email" name="mail" required>
+      </div>
+
+      <div>
+        <strong><span id="ex3message"></span></strong>
+      </div>
+
+      <div class="buttonRow">
+        <button id="ex3savesession" type="button"><strong>Save to Session Storage</strong></button>
+        <button id="ex3savelocal" type="button"><strong>Save to Local Storage</strong></button>
+      </div>
+
+      <div class="buttonRow">
+        <button id="ex3loadsession" type="button">Load from Session Storage</button>
+        <button id="ex3loadlocal" type="button">Load from Local Storage</button>
+      </div>
+
+      <div class="buttonRow">
+        <button id="ex3clear" type="button">Clear all storage</button>
+      </div>
+
+    </div>
+  </section>
+</body>
+
+</html>
