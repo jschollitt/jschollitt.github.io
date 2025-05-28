@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="./assets/js/script.js"></script>
+
+</head>
+
+<body>
+  <section class="txt-center">
+    <div class="grid-2c">
+      <div id="ex1form" class="content container-half card">
+        <div id="ex1loader">
+          <span class="loader"></span>
+        </div>
+
+        <div class="container ">
+          <label for="fname"><strong>First name</strong></label>
+          <input id="fname" type="text" placeholder="Enter first name" name="fname" required>
+          <label for="lname"><strong>Last name</strong></label>
+          <input id="lname" type="text" placeholder="Enter last name" name="lname" required>
+          <label for="mail"><strong>Email</strong></label>
+          <input id="email" type="text" placeholder="Enter Email" name="mail" required>
+        </div>
+        <div class="buttonRow">
+          <button id="ex1randomPerson" type="button">Populate Form</button>
+          <button id="ex1addPerson" type="button">Add Person</button>
+          <button id="ex1clearData" type="button">Clear Person Records</button>
+        </div>
+      </div>
+      <div class="container-half card">
+        <label for="ex1json"><strong>JSON output</strong></label>
+        <textarea id="ex1json" disabled></textarea>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

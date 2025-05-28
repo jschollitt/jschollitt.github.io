@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <section class="center">
+        <div class="grid-2c">
+          <div class="container-half card">
+            <label for="ex0js"><strong>JavaScript Object</strong></label>
+            <textarea id="ex0js" disabled="true">
+                    Person = {
+                        fname: "John",
+                        lname: "Smith",
+                        age: 25,
+                        citizen: true,
+                        children: [
+                            {
+                                fname: "Justine",
+                                lname: "Smith",
+                                age: 3,
+                                citizen: true,
+                                children: null
+                            }
+                        ],
+                        pets: null,
+                        hello() {
+                            return "Hello";
+                        }
+                    }
+                </textarea>
+          </div>
+          <div class="container-half card">
+            <label for="ex0json"><strong>JSON Object Literal</strong></label>
+            <textarea id="ex0json" disabled>
+                "{
+                    "fname": "John",
+                    "lname": "Smith",
+                    "age": 25,
+                    "citizen": true,
+                    "children": [
+                        {
+                            "fname": "Justine",
+                            "lname": "Smith",
+                            "age": 3,
+                            "citizen": true,
+                            "children": null
+                        }
+                    ],
+                    "pets": null
+                }"
+            </textarea>
+          </div>
+        </div>
+      </section>
+</body>
+
+</html>
