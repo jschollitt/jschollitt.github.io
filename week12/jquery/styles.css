@@ -20,6 +20,7 @@ body {
     font-size: 15px;
     line-height: 1.5;
     color: #000;
+    background-color: #cecece;
 }
 
 nav {
@@ -62,12 +63,31 @@ body {
 }
 
 h1 {
+    margin: 5px 0px;
+    font-size: 60px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #206E32, 0 0 0.1em #206E32;
+}
+
+h2 {
+    font-size: xx-large;
     text-align: center;
 }
 
 section {
     padding-bottom: 20px;
     margin-bottom: 20px;
+    border-bottom: 1px solid #7b7b7b;
+}
+
+button {
+    background-color: #206E32;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 0.5em;
 }
 
 .grid {
@@ -78,7 +98,7 @@ section {
 .grid-2c {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 15px;
+    column-gap: auto;
     place-items: center;
 }
 
@@ -94,28 +114,103 @@ section {
 }
 
 .center {
+
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.prettyprint {
+    text-align: left;
+    width: max-content;
     margin-left: auto;
     margin-right: auto;
 }
 
-button {
+.demo {
+    border: #000 solid 1px;
+    padding: 10px;
+    margin: 15px auto;
+    width: fit-content;
+}
+
+.demoBox {
+    width: 200px;
+    height: 200px;
+    border: #000 solid 1px;
+    text-align: left;
+    padding: 30px;
+    margin: auto;
+    display: block;
+    float:left;
+}
+
+#ex8 {
+    width: 822px;
+}
+
+#lightbox {
+    display: none;
+}
+
+.colour-boxes {
+    border-width: 2px;
+    border-color: black;
+}
+
+.colour-boxes td {
+    width: 300px;
+    height: 150px;
+}
+
+#ex4overlay {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+    border-color: black;
+    background-color: gray;
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+#ex9zone {
+    width: 800px;
+    height: 360px;
+    position: relative;
+}
+
+.ex9animate {
+    width: 100px;
+    height: 100px;
+    position: absolute;
     background-color: #206E32;
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 0.5em;
+    color: #fff;
 }
 
-.txt-center {
-    text-align: center;
+#ex91 {
+    top: 10px;
 }
 
-.buttonRow {
-    margin: 10px 0;
+#ex92 {
+    top: 130px;
 }
 
-#canvas {
-    background-color: #206e3227;
-    border: 1px solid #206e3227;
+#ex93 {
+    top: 250px;
+}
+
+#ex10zone {
+    width: 500px;
+    height:500px;
+}
+
+#ex10animate {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #206E32;
 }
