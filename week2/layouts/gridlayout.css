@@ -1,7 +1,12 @@
+body {
+    margin: 0;
+}
+
 .row {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    gap: 10px;
+    grid-template-columns: repeat(5, 20%);
+    gap: 0px;
+    margin: 5px;
 }
 
 .column {
@@ -9,9 +14,20 @@
     text-align: center;
     font-size: 30px;
     height: 1000px;
+    margin: 5px;
 }
 
 .column.middle {
     grid-column-start: 2;
     grid-column-end: 5;
+}
+
+.column.outer.left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.column.outer.right {
+    grid-column-start: 5;
+    grid-column-end: 6;
 }

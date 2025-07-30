@@ -16,9 +16,11 @@ body {
 }
 
 .column.middle {
-    flex-grow: 5;
+    flex-grow: 3;
+    flex-basis: 60%;
 }
 
 .column.outer {
     flex-grow: 1;
+    flex-basis: 20%;
 }
