@@ -1,6 +1,7 @@
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     // This code redirects console log information and prints
     // it to a textarea on the web page instead.
+    console.log("Console redirect initialized.");
     const printField = document.getElementById("printField");
     console.stdlog = console.log.bind(console);
     window.onerror = function(msg, url, line) {
