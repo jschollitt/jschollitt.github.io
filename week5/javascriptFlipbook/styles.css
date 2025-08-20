@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.clear::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html,
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+}
+
+#sidebar {
+    width: 400px;
+    height: 800px;
+    position: relative;
+    border: #000 solid 1px;
+}
+
+.scene {
+    width: 100%;
+    aspect-ratio: 1 / 2;
+    position: absolute;
+    overflow: hidden;
+}
+
+#scene1 {
+    visibility: hidden;
+}
+
+#scene2 {
+    visibility: hidden;
+}
+
+#scene3 {
+    visibility: hidden;
+}
+
+#img1, #img2, #img3 {
+    position: absolute;
+    width: 178%;
+}
+
+#img1 {
+    left: -284px;
+    top: -233px;
+}
+
+#img2 {
+    left: -197px;
+    top: -58px;
+}
+
+#img3 {
+    left: -31px;
+    top: -230px;
+}
+
+#txt1, #txt2, #txt3 {
+    position: absolute;
+    font-size: 60px;
+    left: 90px;
+    top: 350px;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
