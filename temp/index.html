@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        canvas {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myC" width="1280" height="720"></canvas>
+</body>
+<script>
+    const canvas = document.querySelector("#myC");
+    const ctx = canvas.getContext("2d");
+
+    let lastTimestamp = 0;
+    let balls = [];
+
+    balls.push(Ball(Math.round(canvas.clientWidth / 2), Math.round(canvas.clientHeight / 2)));
+    run(0);
+
+    function Ball(x, y) {
+        return {
+            x: x,
+            y: y,
+            radius: 5 + Math.random() * 10,
+            colour: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
+            velX: Math.random() * 3,
+            velY: Math.random() * 3,
+            update: function () {
+                if (this.x + this.radius >= canvas.clientWidth || this.x - this.radius <= 0) this.velX *= -1;
+                if (this.y + this.radius >= canvas.clientHeight || this.y - this.radius <= 0) this.velY *= -1;
+
+                this.x += this.velX;
+                this.y += this.velY;
+                this.velY += this.velY * 1.0089;
+            },
+            draw: function () {
+                ctx.fillColor = this.colour;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        };
+    }
+
+    function run(timestamp) {
+        update(timestamp);
+        draw();
+        window.requestAnimationFrame(run);
+    }
+
+    function update(timestamp) {
+        let delta = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        balls.forEach(ball => {
+            ball.update();
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        balls.forEach(ball => {
+            ball.draw();
+        })
+    }
+</script>
+
+</html>
