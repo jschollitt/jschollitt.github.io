@@ -1,3 +1,21 @@
+let iframes = []
+window.addEventListener("DOMContentLoaded", () => {
+    iframes = document.getElementsByTagName("iframe");
+    window.addEventListener("resize", resizeIFrames());
+});
+
+function resizeIFrames() {
+    for (let i = 0; i < iframes.length; i++) {
+        window.addEventListener("resize", () => {resizeIFrame(iframes[i])});
+
+    }
+}
+
+function resizeIFrame(object) {
+    object.style.height = object.contentWindow.document.documentElement.scrollHeight + 'px';
+    console.log("resize iframe");
+}
+
 const handleFormSubmission = function (e) {
     let fname = document.querySelector("#fname").value;
     let lname = document.querySelector("#lname").value;

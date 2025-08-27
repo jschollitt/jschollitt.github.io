@@ -19,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <script src="./assets/js/app.js"></script>
-
+<script src="./assets/js/iframeScale.js"></script>
 </head>
 
 <body>
@@ -83,7 +83,7 @@
                 <p class="fs-5"><u>The HTML Canvas</u> is a highly flexible element that can be used to
                 display 2D and 3D compositions. Drawing of text and shapes, along with styling options, 
                 are provided by the Canvas API.</p>
-                <iframe class="demo1" src="./drawingShapes/index.html" title="Canvas Drawing" scrolling="no"></iframe>
+                <iframe class="demo1" src="./drawingShapes/index.html" title="Canvas Drawing" scrolling="no" onresize="resizeIFrame(this)"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
@@ -111,7 +111,7 @@
 
             <section>
                 <h1 class="text-body-emphasis"><i class="fa-brands fa-js"></i> Image Animation</h1>
-                <p class="fs-5"><u>Canvas can display and animation images</u> to create dynamic multimedia compositions with JS.</p>
+                <p class="fs-5"><u>Canvas can display and animate images</u> to create dynamic multimedia compositions with JS.</p>
                 <iframe class="demo5" src="./imageAnimation/index.html" title="Image Animation" scrolling="no"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>

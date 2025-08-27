@@ -12,7 +12,7 @@
   <section>
     <form>
       <label class="container">Vertical
-        <input type="radio" checked="checked" name="radio" oninput="SetGradientDir(1)">
+        <input type="radio" name="radio" oninput="SetGradientDir(1)">
         <span class="checkmark"></span>
       </label>
       <label class="container">Horizontal
@@ -20,13 +20,28 @@
         <span class="checkmark"></span>
       </label>
       <label class="container">Diagonal A
-        <input type="radio" name="radio" oninput="SetGradientDir(3)">
+        <input type="radio" checked="checked" name="radio" oninput="SetGradientDir(3)">
         <span class="checkmark"></span>
       </label>
       <label class="container">Diagonal B
         <input type="radio" name="radio" oninput="SetGradientDir(4)">
         <span class="checkmark"></span>
       </label>
+    </form>
+    <label class="container">Colour 1
+      <input type="color" name="colour1" value="#ff0000" oninput="SetGradientCol(0, this.value)">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Colour 2
+      <input type="color" name="colour2" value="#00ff00" oninput="SetGradientCol(1, this.value)">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Colour 3
+      <input type="color" name="colour3" value="#0000ff" oninput="SetGradientCol(2, this.value)">
+      <span class="checkmark"></span>
+    </label>
+    <form>
+
     </form>
     <div class="slidecontainer">
       <input type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="SliderUpdate(this)">
