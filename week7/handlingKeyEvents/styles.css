@@ -80,6 +80,7 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: auto;
     place-items: center;
+    min-width: 800px;
 }
 
 .container-half {
