@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Add Test</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./assets/script.js"></script>
+</head>
+
+<body>
+    <h1>Test Addition API</h1>
+
+    <div class="container section">
+        <h2>GET Request</h2>
+        <label>
+            A:
+            <input type="number" id="getA" />
+        </label>
+        <label>
+            B:
+            <input type="number" id="getB" />
+        </label>
+        <button onclick="testGet()">Add (GET)</button>
+        <p>Result: <span id="getResult"></span></p>
+    </div>
+
+    <div class="container section">
+        <h2>POST Request</h2>
+        <label>
+            A:
+            <input type="number" id="postA" />
+        </label>
+        <label>
+            B:
+            <input type="number" id="postB" />
+        </label>
+        <button onclick="testPost()">Add (POST)</button>
+        <p>Result: <span id="postResult"></span></p>
+    </div>
+</body>
+
+</html>
