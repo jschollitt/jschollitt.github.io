@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>ISCG6420 Course Website</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="./styles.css">
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<script src="./assets/js/app.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="https://github.com/jschollitt/jschollitt.github.io">Website source code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../assessment1Starter/index.html">Project 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Test</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Content</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../week1/index.html">Week 1</a></li>
+                            <li><a class="dropdown-item" href="../week2/index.html">Week 2</a></li>
+                            <li><a class="dropdown-item" href="../week3/index.html">Week 3</a></li>
+                            <li><a class="dropdown-item" href="../week4/index.html">Week 4</a></li>
+                            <li><a class="dropdown-item" href="../week5/index.html">Week 5</a></li>
+                            <li><a class="dropdown-item" href="../week6/index.html">Week 6</a></li>
+                            <li><a class="dropdown-item" href="../week7/index.html">Week 7</a></li>
+                            <li><a class="dropdown-item" href="../week8/index.html">Week 8</a></li>
+                            <li><a class="dropdown-item" href="../week9/index.html">Week 9</a></li>
+                            <li><a class="dropdown-item" href="../week10/index.html">Week 10</a></li>
+                            <li><a class="dropdown-item" href="../week11/index.html">Week 11</a></li>
+                            <li><a class="dropdown-item" href="../week12/index.html">Week 12</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="col-lg-8 mx-auto p-4 py-md-5">
+            <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+                <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+                    <span class="fs-4">Week 9</span>
+                </a>
+            </header>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-bootstrap"></i> + <i class="fa fa-file-code"></i> Bootstrap + JSON</h1>
+                <p class="fs-5"><u>Bootstrap</u> is a framework that lets us build websites fast. This demo shows how remote JSON can be used to fetch element data for dynamic page content generation. 
+                    This example uses a static JSON file for convenience, but an API responding with JSON data will achieve the same result.</p>
+                <p>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/sidebars/"
+                        class="btn btn-primary my-2">Sidebars</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/navbars/"
+                        class="btn btn-secondary my-2">Navbars</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/grid/"
+                        class="btn btn-success my-2">Grid</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/album/"
+                        class="btn btn-danger my-2">Album</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/cover/"
+                        class="btn btn-warning my-2">Cover</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/carousel/"
+                        class="btn btn-info my-2">Carousel</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/starter-template/"
+                        class="btn btn-light my-2">Start Template</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/cheatsheet/"
+                        class="btn btn-dark my-2">Cheatsheet</a>
+                </p>
+                <iframe class="demo1" src="./bootstrapJSON/index.html" title="Bootstrap and JSON cards demo" scrolling="yes"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-film"></i> Sprite Animation Tracks</h1>
+                <p class="fs-5"><u>Sprite</u> tracks are ordered sequences of images (or sub-images) that can be quickly iterated through to produce a motion effect.</p>
+                <iframe class="demo2" src="./spriteTracks/index.html" title="Sprite animation tracks demo" scrolling="no"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-gauge"></i> Sprite Flip Speed</h1>
+                <p class="fs-5">How quickly sprite tracks are iterated through will change and perceived motion speed of the animation.</p>
+                <iframe class="demo3" src="./spriteSpeed/index.html" title="Sprite animation speed demo" scrolling="no"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-arrows-up-down-left-right"></i> Input-based track selection</h1>
+                <p class="fs-5">This demo shows how a sprite animation system can be combined with game input logic to select and iterate through the correct track for the intended game action.</p>
+                <iframe class="demo4" src="./spriteInput/index.html" title="Sprite input animation demo" scrolling="no"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+        </div>
+    </main>
+    
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="mb-1">ISCG6420 course website made by Jesse Schollitt using Bootstrap and Fontawesome</p>
+        </div>
+    </footer>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

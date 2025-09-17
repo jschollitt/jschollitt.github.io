@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cards>
+	<card>
+		<title>River</title>
+		<description>A river leading from a crater lake in a mountain range.</description>
+		<image>./assets/img/dario-jud-GrgKfmm-aCM-unsplash.jpg</image>
+    </card>
+    <card>
+		<title>Alps</title>
+		<description>A snowy mountain range cast by sunset.</description>
+		<image>./assets/img/dario-jud-HXbAioPEVyQ-unsplash.jpg</image>
+    </card>
+    <card>
+		<title>Desert</title>
+		<description>A sandstone structure under a dark sky.</description>
+		<image>./assets/img/dennis-yu-fVadSuPPE8M-unsplash.jpg</image>
+    </card>
+    <card>
+		<title>Forest</title>
+		<description>A misty forest lit by a sunrise.</description>
+		<image>./assets/img/ingmar-h-SvFFr464urs-unsplash.jpg</image>
+    </card>
+    <card>
+		<title>Sand Dune</title>
+		<description>Rolling dunes beneath a mountain range.</description>
+		<image>./assets/img/joseph-corl-Vnnlb1m78w4-unsplash.jpg</image>
+    </card>
+    <card>
+		<title>Valley</title>
+		<description>Fog engulfing a valley in the early morning light.</description>
+		<image>./assets/img/zetong-li-MaeshPdBGV4-unsplash.jpg</image>
+    </card>
+</cards>

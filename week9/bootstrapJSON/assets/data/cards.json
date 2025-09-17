@@ -1,0 +1,32 @@
+[
+    {
+        "title": "River",
+        "description": "A river leading from a crater lake in a mountain range.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/dario-jud-GrgKfmm-aCM-unsplash.jpg"
+    },
+    {
+        "title": "Alps",
+        "description": "A snowy mountain range cast by sunset.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/dario-jud-HXbAioPEVyQ-unsplash.jpg"
+    },
+    {
+        "title": "Desert",
+        "description": "A sandstone structure under a dark sky.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/dennis-yu-fVadSuPPE8M-unsplash.jpg"
+    },
+    {
+        "title": "Forest",
+        "description": "A misty forest lit by a sunrise.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/ingmar-h-SvFFr464urs-unsplash.jpg"
+    },
+    {
+        "title": "Sand Dune",
+        "description": "Rolling dunes beneath a mountain range.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/joseph-corl-Vnnlb1m78w4-unsplash.jpg"
+    },
+    {
+        "title": "Valley",
+        "description": "Fog engulfing a valley in the early morning light.",
+        "image": "https://jschollitt.github.io/week9/bootstrapJSON/assets/img/zetong-li-MaeshPdBGV4-unsplash.jpg"
+    }
+]
