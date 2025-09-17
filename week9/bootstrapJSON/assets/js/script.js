@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function() {   
-    // Use the Fetch API to load the XML file
+    // Use the Fetch API to load the JSON file
     fetch('https://jschollitt.github.io/week9/bootstrapJSON/assets/data/cards.json')
-    // From the response, get the text
+    // From the response, process the JSON data
         .then(response => response.json())
-        // Create a callback function to handle the XML text
+        // From the JSON, process the data
         .then(cards => {
             // Get the card container element from the HTML
             const cardContainer = document.getElementById("card-container");
@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 const cardElement = document.createElement("div");
                 cardElement.classList.add("col-md-4");
                 cardElement.style.marginBottom = "20px";
-
 
                 cardElement.innerHTML = `
                 <div class="card" style="width: 18rem;">
@@ -29,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
         })
         // Handle any errors that occur during the fetch
         .catch(error => {
-            console.error('Error fetching XML:', error)
+            console.error('Error fetching JSON:', error)
             document.getElementById("card-container").innerHTML = "<p class='text-danger'>Failed to load cards.</p>";
         });
 });
