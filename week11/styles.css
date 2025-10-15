@@ -111,6 +111,10 @@ iframe.demo5 {
   height: 600px;
 }
 
+iframe.demo6 {
+  height: 400px;
+}
+
 .card:before {
   content: '';
   padding-bottom: 100%;
