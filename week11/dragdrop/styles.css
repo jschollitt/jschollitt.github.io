@@ -76,10 +76,19 @@ section {
 }
 
 .grid-2c {
-    display: grid;
+    /*min-width: 900px;
+    */display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 15px;
     place-items: center;
+}
+
+@media screen and (width < 1000px){
+    .grid-2c {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 15px;
+    }
 }
 
 .container-half {
@@ -94,8 +103,8 @@ section {
 }
 
 .center {
-   margin-left: auto;
-   margin-right: auto; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ex1dropzone {
