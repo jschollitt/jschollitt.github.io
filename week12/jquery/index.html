@@ -150,6 +150,31 @@ $(".hover").hover(function () {
       </section>
 
       <section class="center">
+        <h2 class="underline">Fade in/out</h2>
+        <subtitle>Code</subtitle>
+        <pre class="prettyprint">
+let isFaded = false;
+
+$('#ex7button').click(function() {
+    $('#ex7img').fadeOut("slow");
+    if (isFaded)
+        $('#ex7img').fadeIn("slow");
+    else
+        $('#ex7img').fadeOut("slow");
+    isFaded = !isFaded;
+});
+        </pre>
+
+        <subtitle>Click on the button to fade the image in and out</subtitle>
+        <div id="ex7" class="demo">
+          <button id="ex7button">Toggle Fade</button>
+          <div>
+            <img id="ex7img" src="./assets/alonso-reyes-unsplash.jpg" alt="Sample Image" width="800" />
+          </div>
+        </div>
+      </section>
+
+      <section class="center">
         <h2 class="underline">Handling Mouse Input</h2>
         <subtitle>Code</subtitle>
         <pre class="prettyprint">

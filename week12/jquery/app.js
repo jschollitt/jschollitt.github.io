@@ -47,6 +47,16 @@ $('document').ready(function () {
     // Week 9
 
     // exercise 7: Fade effects
+    let isFaded = false;
+
+    $('#ex7button').click(function() {
+        $('#ex7img').fadeOut("slow");
+        if (isFaded)
+            $('#ex7img').fadeIn("slow");
+        else
+            $('#ex7img').fadeOut("slow");
+        isFaded = !isFaded;
+    });
     // Week 9
 
 
@@ -91,6 +101,8 @@ $('document').ready(function () {
             });
         }
     })
+
+    
 });
 
 function ex13Submit() {
@@ -102,6 +114,8 @@ function ex13Submit() {
         )
     );
 }
+
+
 
 function getRandomColour() {
     switch (Math.floor(Math.random() * 10)) {
