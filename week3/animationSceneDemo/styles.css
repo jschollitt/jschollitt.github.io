@@ -1,0 +1,68 @@
+body {
+    background-color: #000;
+}
+
+#banner {
+    position: relative;
+    width: 40%;
+    aspect-ratio: 10 / 3;
+}
+
+#scene1 {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+#img1 {
+    position: absolute;
+    width: 200%;
+    top: -461px;
+    left: -700px;
+    background-image: url("../../assessment1Starter/assets/img/sylvain-cleymans-janathjy7bw-unsplash.jpg");
+    background-repeat: no-repeat;
+    aspect-ratio: 16 / 9;
+
+    animation-name: animImg1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animImg1 {
+    0% {
+        left: -700px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+#text1 {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    width: 300px;
+    top: 4em;
+    left: -285px;
+
+    animation-name: animText1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 3s;
+}
+
+@keyframes animText1 {
+    0% {
+        left: -285px;
+    }
+    50% {
+        left: 500px;
+    }
+    100% {
+        left: 1500px;
+    }
+}
