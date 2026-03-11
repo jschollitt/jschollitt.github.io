@@ -18,6 +18,7 @@
 
 <script src="./assets/js/iframeScale.js"></script>
 <script src="./assets/js/consoleRedirect.js"></script>
+<script src="./assets/js/printToConsole.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,8 @@
                         <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://github.com/jschollitt/jschollitt.github.io">Website source code</a>
+                        <a class="nav-link" aria-current="page"
+                            href="https://github.com/jschollitt/jschollitt.github.io">Website source code</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../assessment1Starter/index.html">Project 1</a>
@@ -80,35 +82,43 @@
             <section>
                 <h1 class="text-body-emphasis"><i class="fa-solid fa-chart-line"></i> Storyboard Animation</h1>
                 <p class="fs-5"><u>Storyboards</u> are a great tool for rapidly designing and revising an
-                animation sequence prior to implementation. Once a storyboard is approved by stakeholders 
-                it can be created using CSS quickly using the defined component attributes.</p>
-                <iframe class="demo0" src="./storyboardCSS/index.html" title="Storyboard Animation" scrolling="no" onresize="resizeIFrame(this)"></iframe>
+                    animation sequence prior to implementation. Once a storyboard is approved by stakeholders
+                    it can be created using CSS quickly using the defined component attributes.</p>
+                <iframe class="demo0" src="./storyboardCSS/index.html" title="Storyboard Animation" scrolling="no"
+                    onresize="resizeIFrame(this)"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
                 <h1 class="text-body-emphasis"><i class="fa-brands fa-js"></i> JavaScript</h1>
                 <p class="fs-5"><u>JavaScript or ECMAScript</u> is the programming and scripting language
-                of the web. It is used to provide advanced functionality to websites that is typically not
-                achieveable with HTML and CSS alone.</p>
+                    of the web. It is used to provide advanced functionality to websites that is typically not
+                    achieveable with HTML and CSS alone.</p>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">MDN reference</a>
 
-                <iframe class="demo1" src="./calculator/calculator.html" title="Calculator demo" scrolling="no" onresize="resizeIFrame(this)"></iframe>
+                <iframe class="demo1" src="./calculator/calculator.html" title="Calculator demo" scrolling="no"
+                    onresize="resizeIFrame(this)"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
                 <h1 class="text-body-emphasis"><i class="fa-brands fa-css"></i> CSS with JS</h1>
                 <p class="fs-5"><u>CSS Styles</u> can be modified be JavaScript via the DOM API:</p>
-                <iframe class="demo2" src="./cssfromjs/cssfromjs.html" title="Modify CSS from JS" scrolling="no" onresize="resizeIFrame(this)"></iframe>
+                <iframe class="demo2" src="./cssfromjs/cssfromjs.html" title="Modify CSS from JS" scrolling="no"
+                    onresize="resizeIFrame(this)"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
                 <h1 class="text-body-emphasis"><i class="fa-solid fa-chart-line"></i> Web Console</h1>
-                <p class="fs-5"><u>The web console</u> is a powerful tool for testing, monitoring, and 
-                modifying a website. Below is a feed containing the console output. Use the console in 
-                the web browser dev tools to modify the website and see the results.</p>
+                <p class="fs-5"><u>The web console</u> is a powerful tool for testing, monitoring, and
+                    modifying a website. Below is a feed containing the console output. Use the console in
+                    the web browser dev tools to modify the website and see the results.</p>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary" onclick="printToConsole()">Print to console</button>
+                    </div>
+                </div>
                 <div id="printField"></div>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
