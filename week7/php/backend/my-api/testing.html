@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random API Tester</title>
+
+</head>
+<body>
+
+<h1>Random Number API Tester</h1>
+
+<div class="row">
+    <label>Min:</label>
+    <input type="number" id="min" value="0">
+</div>
+
+<div class="row">
+    <label>Max:</label>
+    <input type="number" id="max" value="10">
+</div>
+
+<button id="runBtn">Get Random Number</button>
+
+<div class="result" id="result">Result will appear here</div>
+<div class="error" id="error"></div>
+
+<script type="module">
+    const resultEl = document.getElementById('result');
+    const errorEl = document.getElementById('error');
+    const button = document.getElementById('runBtn');
+
+    button.addEventListener('click', async () => {
+        const min = document.getElementById('min').value;
+        const max = document.getElementById('max').value;
+
+        errorEl.textContent = '';
+        resultEl.textContent = 'Loading...';
+
+        try {
+            const res = await fetch(`http://localhost:3001/random?min=${min}&max=${max}`);
+
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+
+            const data = await res.text(); // or .json() if you switch later
+            const number = JSON.parse(data).result;
+            resultEl.textContent = `Result: ${number}`;
+        } catch (err) {
+            resultEl.textContent = '—';
+            errorEl.textContent = `Error: ${err.message}`;
+            console.error(err);
+        }
+    });
+</script>
+
+</body>
+</html>

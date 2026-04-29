@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function showScene(sceneNumber) {
+    console.log("scene");
     for (let i = 0; i < scenes.length; i++) {
         // conditional operator
         scenes[i].style.visibility = (i === sceneNumber) ? "visible" : "hidden";
