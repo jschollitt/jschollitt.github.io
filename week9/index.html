@@ -18,8 +18,6 @@
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
-<script src="./assets/js/app.js"></script>
-<script src="../assets/js/iframeResize.js"></script>
 
 </head>
 
@@ -77,183 +75,125 @@
 
             <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
                 <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
-                    <span class="fs-4">Week 7</span>
+                    <span class="fs-4">Week 9</span>
                 </a>
             </header>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-globe"></i> Testing back-end using a front-end</h1>
-                <p class="fs-5"><u>Back-end</u> servers can be interacted with via API using HTTP requests from a
-                    website.</p>
-                <iframe class="demo1" src="./frontend/index.html" title="backend testing from the frontend"
-                    scrolling="no"></iframe>
-                <hr class="col-3 col-md-2 mb-5">
-            </section>
-
-            <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> Express.js Back-End</h1>
-                <p class="fs-5"><u>Express.js</u> makes creating a back-end API simple. Using CORS allows front-ends
-                    from different domains to make API requests.</p>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-wpforms"></i> React Forms</h1>
+                <p class="fs-5"><u>Forms</u> in React require the use of State to track input data. 
+                    This is achieved by setting the field value to a state variable, and calling the set variable state function in the onChange event.
+                    Responding to the form submission is handled by a function in the component called when the onSubmit event occurs.
+                    preventDefault() is called to stop the browser attempting to handle the form submission.
+                </p>
                 <div class="d-flex flex-row justify-content-center">
                     <pre class="prettyprint col-lg-12">
+import { useState } from "react";
 
-    import express from "express";
-    import cors from "cors";
-    import { add } from "./math.js";
+function MyForm () {
+    const [name, setName] = useState("");
 
-    const app = express();
-    const PORT = 3000;
-
-    // middleware
-    app.use(cors());
-    app.use(express.json());
-
-    // helper functions
-    function validateNumbers(a, b) {
-        return (typeof a === "number" && typeof b === "number" && !isNaN(a) && !isNaN(b));
+    function handleSubmit() {
+        e.preventDefault();
+        // TODO: do something with the form data.
     }
 
-    // endpoints
-
-    // GET method
-    // Request using query parameters to pass numbers
-    // http://localhost:3000/add?a=10&b=4
-    app.get("/add", (req, res) => {
-        const a = parseFloat(req.query.a);
-        const b = parseFloat(req.query.b);
-
-        if (!validateNumbers(a, b)) {
-            return res.status(400).json({ error: "Both values must be numbers" });
-        }
-
-        res.json({ result: add(a, b) });
-    });
-
-    // POST method
-    // Request using body to pass numbers
-    // http://localhost:3000/add?a=10&b=4
-    app.post("/add", (req, res) => {
-        const { a, b } = req.body;
-
-        if (!validateNumbers(a, b)) {
-            return res.status(400).json({ error: "Both values must be numbers" });
-        }
-
-        res.json({ result: add(a, b) });
-    });
-
-    // Start server
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-                </pre>
-                </div>
-                <hr class="col-3 col-md-2 mb-5">
-            </section>
-
-            <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> PHP Slim Back-End</h1>
-                <p class="fs-5"><u>PHP</u> is an alternative to JavaScript for creating back-end APIs. The Slim framework simplifies this process
-                by providing a simple and flexible way to handle HTTP requests.</p>
-                <p class="fs-5">Run <code>composer require slim/slim:^4 slim/psr7</code> after creating the project.</p>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
-
-&lt;?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-use Slim\Factory\AppFactory;
-
-$app = AppFactory::create();
-
-// Middleware (like express.json())
-$app->addBodyParsingMiddleware();
-
-// Helper function
-function validateNumbers($a, $b) {
-    return is_numeric($a) && is_numeric($b);
+    return (
+        &lt;form onSubmit={handleSubmit}&gt;
+            &lt;input type="text" value={name} onChange={(e) => {setName(e.target.value)} /&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    );
 }
 
-// GET /add?a=1&b=2
-$app->get('/add', function ($request, $response) {
-    $params = $request->getQueryParams();
+export default MyComponent;
 
-    $a = floatval($params['a'] ?? null);
-    $b = floatval($params['b'] ?? null);
+                </pre>
+                </div>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
 
-    if (!validateNumbers($a, $b)) {
-        $response->getBody()->write(json_encode([
-            "error" => "Both values must be numbers"
-        ]));
-        return $response->withStatus(400)
-                        ->withHeader('Content-Type', 'application/json');
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-align-justify"></i> List Rendering</h1>
+                <p class="fs-5"><u>React</u> can render a collection of data into a list of react components.
+                To do so, two components are used: ComponentList, ComponentItem.</p>
+                <p class="fs-5">Using the array.map(func) function, a ComponentItem can be created for each data item in a collection.</p>
+                <h2>Component Item:</h2>
+                <div class="d-flex flex-row justify-content-center">
+                    <pre class="prettyprint col-lg-12">
+function ScheduleItem({ booking }) {
+    return (
+        &lt;div&gt;
+            {booking.name}: {booking.date} @ {booking.time}
+        &lt;/div&gt;
+    );
+}
+
+export default ScheduleItem;
+                </pre>
+                </div>
+
+                <h2>Component List</h2>
+                <div class="d-flex flex-row justify-content-center">
+                    <pre class="prettyprint col-lg-12">
+import ScheduleItem from "./ScheduleItem";
+
+function ScheduleList({ bookings }) {
+
+    if (bookings.length === 0) {
+        return (
+            &lt;h3&gt;Schedule is clear.&lt;/h3&gt;
+        );
     }
+    
+    return (
+        <>
+            &lt;h3&gt;Schedule&lt;/h3&gt;
+            {bookings.map((b, index) => (
+                &lt;ScheduleItem key={index} booking={b} /&gt;
+            ))}
+        </>
+    );
+}
 
-    $response->getBody()->write(json_encode([
-        "result" => $a + $b
-    ]));
-
-    return $response->withHeader('Content-Type', 'application/json');
-});
-
-// POST /add
-$app->post('/add', function ($request, $response) {
-    $data = $request->getParsedBody();
-
-    $a = $data['a'] ?? null;
-    $b = $data['b'] ?? null;
-
-    print "Received POST data: " . json_encode($data) . "\n";
-
-    if (!validateNumbers($a, $b)) {
-        $response->getBody()->write(json_encode([
-            "error" => "Both values must be numbers"
-        ]));
-        return $response->withStatus(400)
-                        ->withHeader('Content-Type', 'application/json');
-    }
-
-    $response->getBody()->write(json_encode([
-        "result" => $a + $b
-    ]));
-
-    return $response->withHeader('Content-Type', 'application/json');
-});
-
-$app->run();
+export default ScheduleList;
                 </pre>
                 </div>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> JavaScript Object Notation</h1>
-                <p class="fs-5"><u>JSON</u> allows data to be transferred between the front-end and back-end with minimal transformations.</p>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> State Lifting</h1>
+                <p class="fs-5"><u>State</u> data can be transferred between components by "lifting" the data out of the component to a common parent (such as App.jsx).</p>
                 <div class="d-flex flex-row justify-content-center">
                     <pre class="prettyprint col-lg-12">
+import { useState } from "react";
 
-    const myObject = {
-        name: "John Smith",
-        age: 25,
-        address: "139 Carrington Rd, Mt Albert, Auckland 1024"
-    }
+function App() {
 
-    const objAsJSON = JSON.stringify(myObject);
+  // Create array in state
+  const [schedule, setSchedule] = useState([]);
 
-    const objFromJSON = JSON.parse(objAsJSON);
+  // Function for adding to the array
+  function addBooking(booking) {
+    setSchedule(oldSchedule => [...oldSchedule, booking]);
+  }
 
-    console.log(objFromJSON);
-    // output:
-    // myObject {
-    //      name: "John Smith",
-    //      age: 25,
-    //      address: "139 Carrington Rd, Mt Albert, Auckland 1024"
-    // }
+  return (
+    &lt;&gt;
+      &lt;Form onAdd={addBooking} /&gt; // pass the function to the form
+      &lt;ScheduleList bookings={schedule} /&gt; // pass the array to the list component
+    &lt;/&gt;
+  );
+}
+
+export default App;
                 </pre>
                 </div>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
+
         </div>
     </main>
 

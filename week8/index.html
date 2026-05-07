@@ -18,8 +18,6 @@
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
-<script src="./assets/js/app.js"></script>
-<script src="../assets/js/iframeResize.js"></script>
 
 </head>
 
@@ -77,183 +75,105 @@
 
             <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
                 <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
-                    <span class="fs-4">Week 7</span>
+                    <span class="fs-4">Week 8</span>
                 </a>
             </header>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-globe"></i> Testing back-end using a front-end</h1>
-                <p class="fs-5"><u>Back-end</u> servers can be interacted with via API using HTTP requests from a
-                    website.</p>
-                <iframe class="demo1" src="./frontend/index.html" title="backend testing from the frontend"
-                    scrolling="no"></iframe>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> React</h1>
+                <p class="fs-5"><u>React</u> is a user interface library for web and native. It focuses on
+                    component-based interface design to bring modularity and resuability to HTML.</p>
+                <a href="https://react.dev/">https://react.dev/</a>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> Express.js Back-End</h1>
-                <p class="fs-5"><u>Express.js</u> makes creating a back-end API simple. Using CORS allows front-ends
-                    from different domains to make API requests.</p>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-screwdriver-wrench"></i> Vite</h1>
+                <p class="fs-5"><u>Vite</u> is a dev tool that makes building React apps easier. It uses Rollup/Rolldown
+                    under the hood and provides easy-to-use commands to perform complex actions.</p>
+                <a href="https://vite.dev/">https://vite.dev/</a>
 
-    import express from "express";
-    import cors from "cors";
-    import { add } from "./math.js";
-
-    const app = express();
-    const PORT = 3000;
-
-    // middleware
-    app.use(cors());
-    app.use(express.json());
-
-    // helper functions
-    function validateNumbers(a, b) {
-        return (typeof a === "number" && typeof b === "number" && !isNaN(a) && !isNaN(b));
-    }
-
-    // endpoints
-
-    // GET method
-    // Request using query parameters to pass numbers
-    // http://localhost:3000/add?a=10&b=4
-    app.get("/add", (req, res) => {
-        const a = parseFloat(req.query.a);
-        const b = parseFloat(req.query.b);
-
-        if (!validateNumbers(a, b)) {
-            return res.status(400).json({ error: "Both values must be numbers" });
-        }
-
-        res.json({ result: add(a, b) });
-    });
-
-    // POST method
-    // Request using body to pass numbers
-    // http://localhost:3000/add?a=10&b=4
-    app.post("/add", (req, res) => {
-        const { a, b } = req.body;
-
-        if (!validateNumbers(a, b)) {
-            return res.status(400).json({ error: "Both values must be numbers" });
-        }
-
-        res.json({ result: add(a, b) });
-    });
-
-    // Start server
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-                </pre>
+                <div class="row">
+                    <code>
+                        npm create vite@latest my-project-name
+                    </code>
                 </div>
+                <div class="row">
+                    <div class="col-3">
+                        <img src="./assets/img/vite-project-folder.png" alt="vite folder structure for react" />
+
+                    </div>
+                </div>
+
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> PHP Slim Back-End</h1>
-                <p class="fs-5"><u>PHP</u> is an alternative to JavaScript for creating back-end APIs. The Slim framework simplifies this process
-                by providing a simple and flexible way to handle HTTP requests.</p>
-                <p class="fs-5">Run <code>composer require slim/slim:^4 slim/psr7</code> after creating the project.</p>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> React Components</h1>
+                <p class="fs-5"><u>Components</u> are resuable User Interface elements. We use JSX files to store each
+                    component. A JSX file should contain a function matching the file name, and an export of the
+                    function:</p>
                 <div class="d-flex flex-row justify-content-center">
                     <pre class="prettyprint col-lg-12">
+import React from "react"; // not used here, but useful to know the React root import
 
-&lt;?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-use Slim\Factory\AppFactory;
-
-$app = AppFactory::create();
-
-// Middleware (like express.json())
-$app->addBodyParsingMiddleware();
-
-// Helper function
-function validateNumbers($a, $b) {
-    return is_numeric($a) && is_numeric($b);
+function MyComponent () {
+    return (
+        &lt;h1&gt;This is my component!&lt;/h1&gt;
+    );
 }
 
-// GET /add?a=1&b=2
-$app->get('/add', function ($request, $response) {
-    $params = $request->getQueryParams();
+export default MyComponent;
 
-    $a = floatval($params['a'] ?? null);
-    $b = floatval($params['b'] ?? null);
-
-    if (!validateNumbers($a, $b)) {
-        $response->getBody()->write(json_encode([
-            "error" => "Both values must be numbers"
-        ]));
-        return $response->withStatus(400)
-                        ->withHeader('Content-Type', 'application/json');
-    }
-
-    $response->getBody()->write(json_encode([
-        "result" => $a + $b
-    ]));
-
-    return $response->withHeader('Content-Type', 'application/json');
-});
-
-// POST /add
-$app->post('/add', function ($request, $response) {
-    $data = $request->getParsedBody();
-
-    $a = $data['a'] ?? null;
-    $b = $data['b'] ?? null;
-
-    print "Received POST data: " . json_encode($data) . "\n";
-
-    if (!validateNumbers($a, $b)) {
-        $response->getBody()->write(json_encode([
-            "error" => "Both values must be numbers"
-        ]));
-        return $response->withStatus(400)
-                        ->withHeader('Content-Type', 'application/json');
-    }
-
-    $response->getBody()->write(json_encode([
-        "result" => $a + $b
-    ]));
-
-    return $response->withHeader('Content-Type', 'application/json');
-});
-
-$app->run();
                 </pre>
                 </div>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-handshake"></i> JavaScript Object Notation</h1>
-                <p class="fs-5"><u>JSON</u> allows data to be transferred between the front-end and back-end with minimal transformations.</p>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> Props</h1>
+                <p class="fs-5"><u>Props</u> or properties are data that are passed down into a component (like a
+                    function parameter).</p>
+                <p class="fs-5">Props values should not be changed by the component receiving them, rather the values should be observed and reacted to.</p>
                 <div class="d-flex flex-row justify-content-center">
                     <pre class="prettyprint col-lg-12">
+import React from "react";
 
-    const myObject = {
-        name: "John Smith",
-        age: 25,
-        address: "139 Carrington Rd, Mt Albert, Auckland 1024"
-    }
+function MyComponent ({ myProp }) {
+    return (
+        &lt;h1&gt;My prop data: {myProp}&lt;/h1&gt;
+    );
+}
 
-    const objAsJSON = JSON.stringify(myObject);
+export default MyComponent;
 
-    const objFromJSON = JSON.parse(objAsJSON);
-
-    console.log(objFromJSON);
-    // output:
-    // myObject {
-    //      name: "John Smith",
-    //      age: 25,
-    //      address: "139 Carrington Rd, Mt Albert, Auckland 1024"
-    // }
                 </pre>
                 </div>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> State</h1>
+                <p class="fs-5"><u>State</u> is data stored inside a component. This data is owned, controlled, and modified by the component.</p>
+                <div class="d-flex flex-row justify-content-center">
+                    <pre class="prettyprint col-lg-12">
+import { useState } from "react"; // import the state access function 
+
+function MyComponent () {
+    const [myVar, setMyVar] = useState("myVar init value");
+
+    return (
+        &lt;button onClick="{() => setMyVar('New value')}"&gt;Click Me&lt;/button&gt;
+    );
+}
+
+export default MyComponent;
+
+                </pre>
+                </div>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
         </div>
     </main>
 

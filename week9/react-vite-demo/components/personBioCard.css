@@ -1,0 +1,41 @@
+.bio-card {
+  width: 240px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  text-align: center;
+
+  /* subtle modern shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* smooth hover effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.bio-card-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin-bottom: 15px;
+}
+
+.bio-card-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.bio-card-title {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+}
