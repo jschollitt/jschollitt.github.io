@@ -18,6 +18,7 @@
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
+<script src="./assets/js/app.js"></script>
 
 </head>
 
@@ -35,8 +36,7 @@
                         <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page"
-                            href="https://github.com/jschollitt/jschollitt.github.io">Website source code</a>
+                        <a class="nav-link" aria-current="page" href="https://github.com/jschollitt/jschollitt.github.io">Website source code</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../assessment1Starter/index.html">Project 1</a>
@@ -72,7 +72,6 @@
 
     <main>
         <div class="col-lg-8 mx-auto p-4 py-md-5">
-
             <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
                 <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
                     <span class="fs-4">Week 9</span>
@@ -80,127 +79,54 @@
             </header>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-brands fa-wpforms"></i> React Forms</h1>
-                <p class="fs-5"><u>Forms</u> in React require the use of State to track input data.
-                    This is achieved by setting the field value to a state variable, and calling the set variable state
-                    function in the onChange event.
-                    Responding to the form submission is handled by a function in the component called when the onSubmit
-                    event occurs.
-                    preventDefault() is called to stop the browser attempting to handle the form submission.
+                <h1 class="text-body-emphasis"><i class="fa-brands fa-bootstrap"></i> + <i class="fa fa-file-code"></i> Bootstrap + JSON</h1>
+                <p class="fs-5"><u>Bootstrap</u> is a framework that lets us build websites fast. This demo shows how remote JSON can be used to fetch element data for dynamic page content generation. 
+                    This example uses a static JSON file for convenience, but an API responding with JSON data will achieve the same result.</p>
+                <p>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/sidebars/"
+                        class="btn btn-primary my-2">Sidebars</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/navbars/"
+                        class="btn btn-secondary my-2">Navbars</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/grid/"
+                        class="btn btn-success my-2">Grid</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/album/"
+                        class="btn btn-danger my-2">Album</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/cover/"
+                        class="btn btn-warning my-2">Cover</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/carousel/"
+                        class="btn btn-info my-2">Carousel</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/starter-template/"
+                        class="btn btn-light my-2">Start Template</a>
+                    <a href="https://getbootstrap.com/docs/5.0/examples/cheatsheet/"
+                        class="btn btn-dark my-2">Cheatsheet</a>
                 </p>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
-import { useState } from "react";
-
-function MyForm () {
-    const [name, setName] = useState("");
-
-    function handleSubmit() {
-        e.preventDefault();
-        // TODO: do something with the form data.
-    }
-
-    return (
-        &lt;form onSubmit={handleSubmit}&gt;
-            &lt;input type="text" value={name} onChange={(e) => {setName(e.target.value)} /&gt;
-            &lt;button type="submit"&gt;Submit&lt;/button&gt;
-        &lt;/form&gt;
-    );
-}
-
-export default MyComponent;
-
-                </pre>
-                </div>
-                <hr class="col-3 col-md-2 mb-5">
-            </section>
-
-
-            <section>
-                <h1 class="text-body-emphasis"><i class="fa-solid fa-align-justify"></i> List Rendering</h1>
-                <p class="fs-5"><u>React</u> can render a collection of data into a list of react components.
-                    To do so, two components are used: ComponentList, ComponentItem.</p>
-                <p class="fs-5">Using the array.map(func) function, a ComponentItem can be created for each data item in
-                    a collection.</p>
-                <h2>Component Item:</h2>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
-function ScheduleItem({ booking }) {
-    return (
-        &lt;div&gt;
-            {booking.name}: {booking.date} @ {booking.time}
-        &lt;/div&gt;
-    );
-}
-
-export default ScheduleItem;
-                </pre>
-                </div>
-
-                <h2>Component List</h2>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
-import ScheduleItem from "./ScheduleItem";
-
-function ScheduleList({ bookings }) {
-
-    if (bookings.length === 0) {
-        return (
-            &lt;h3&gt;Schedule is clear.&lt;/h3&gt;
-        );
-    }
-    
-    return (
-        <>
-            &lt;h3&gt;Schedule&lt;/h3&gt;
-            {bookings.map((b, index) => (
-                &lt;ScheduleItem key={index} booking={b} /&gt;
-            ))}
-        </>
-    );
-}
-
-export default ScheduleList;
-                </pre>
-                </div>
+                <iframe class="demo1" src="./bootstrapJSON/index.html" title="Bootstrap and JSON cards demo" scrolling="yes"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
             <section>
-                <h1 class="text-body-emphasis"><i class="fa-brands fa-react"></i> State Lifting</h1>
-                <p class="fs-5"><u>State</u> data can be transferred between components by "lifting" the data out of the
-                    component to a common parent (such as App.jsx).</p>
-                <div class="d-flex flex-row justify-content-center">
-                    <pre class="prettyprint col-lg-12">
-import { useState } from "react";
-
-function App() {
-
-  // Create array in state
-  const [schedule, setSchedule] = useState([]);
-
-  // Function for adding to the array
-  function addBooking(booking) {
-    setSchedule(oldSchedule => [...oldSchedule, booking]);
-  }
-
-  return (
-    &lt;&gt;
-      &lt;Form onAdd={addBooking} /&gt; // pass the function to the form
-      &lt;ScheduleList bookings={schedule} /&gt; // pass the array to the list component
-    &lt;/&gt;
-  );
-}
-
-export default App;
-                </pre>
-                </div>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-film"></i> Sprite Animation Tracks</h1>
+                <p class="fs-5"><u>Sprite</u> tracks are ordered sequences of images (or sub-images) that can be quickly iterated through to produce a motion effect.</p>
+                <iframe class="demo2" src="./spriteTracks/index.html" title="Sprite animation tracks demo" scrolling="no"></iframe>
                 <hr class="col-3 col-md-2 mb-5">
             </section>
 
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-gauge"></i> Sprite Flip Speed</h1>
+                <p class="fs-5">How quickly sprite tracks are iterated through will change and perceived motion speed of the animation.</p>
+                <iframe class="demo3" src="./spriteSpeed/index.html" title="Sprite animation speed demo" scrolling="no"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <section>
+                <h1 class="text-body-emphasis"><i class="fa-solid fa-arrows-up-down-left-right"></i> Input-based track selection</h1>
+                <p class="fs-5">This demo shows how a sprite animation system can be combined with game input logic to select and iterate through the correct track for the intended game action.</p>
+                <iframe class="demo4" src="./spriteInput/index.html" title="Sprite input animation demo" scrolling="no"></iframe>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
         </div>
     </main>
-
+    
     <footer class="text-body-secondary py-5">
         <div class="container">
             <p class="mb-1">ISCG6420 course website made by Jesse Schollitt using Bootstrap and Fontawesome</p>
@@ -210,3 +136,4 @@ export default App;
 </body>
 
 </html>
+
