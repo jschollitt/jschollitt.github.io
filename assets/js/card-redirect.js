@@ -7,6 +7,6 @@ document.querySelector('#wk6').addEventListener("click", (e) => window.location.
 document.querySelector('#wk7').addEventListener("click", (e) => window.location.replace("./week7/index.html"));
 document.querySelector('#wk8').addEventListener("click", (e) => window.location.replace("./week8/index.html"));
 document.querySelector('#wk9').addEventListener("click", (e) => window.location.replace("./week9/index.html"));
-document.querySelector('#wk10').addEventListener("click", (e) => window.location.replace("./week10/index.html"));
 document.querySelector('#wk11').addEventListener("click", (e) => window.location.replace("./week11/index.html"));
 document.querySelector('#wk12').addEventListener("click", (e) => window.location.replace("./week12/index.html"));
+document.querySelector('#wk13').addEventListener("click", (e) => window.location.replace("./week13/index.html"));
