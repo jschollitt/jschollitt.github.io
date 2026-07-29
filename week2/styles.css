@@ -369,3 +369,165 @@
       transform: scale(1);
   }
 }
+
+/* Windows Spinner demo */
+#windowsSpinner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #0078D4;
+}
+
+.wSpinnerDot {
+  position: absolute;
+  width: 80%;
+  aspect-ratio: 1;
+  margin: 10%;
+  background-color: #aaaaff00;
+  animation-name: windowsSpin;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.dot {
+  width: 10%;
+  aspect-ratio: 1;
+  background-color: white;
+  margin-left: 45%;
+  margin-right: 45%;
+  border-radius: 50%;
+}
+
+#wSpinnerDot1 {
+  animation-delay: 100ms;
+}
+#wSpinnerDot2 {
+  animation-delay: 200ms;
+}
+#wSpinnerDot3 {
+  animation-delay: 300ms;
+}
+#wSpinnerDot4 {
+  animation-delay: 400ms;
+}
+#wSpinnerDot5 {
+  animation-delay: 500ms;
+}
+#wSpinnerDotBlocker {
+  animation: none;
+  width: 82%;
+  margin: 9%;
+  .dot {
+    width: 12%;
+    margin-left: 44%;
+    margin-right: 44%;
+    background-color: #0078D4;
+  }
+}
+
+@keyframes windowsSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Samsung Spinner demo */
+#samsungSpinner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #252525;
+}
+
+.sSpinnerDot {
+  position: absolute;
+  width: 50%;
+  aspect-ratio: 1;
+  margin: 25%;
+  background-color: #00ffe100;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#sSpinnerDot1 {
+  animation-name: samsungSpin1;
+  transform: rotate(0deg);
+}
+#sSpinnerDot2 {
+  animation-name: samsungSpin2;
+  transform: rotate(90deg);
+}
+#sSpinnerDot3 {
+  animation-name: samsungSpin3;
+  transform: rotate(180deg);
+}
+#sSpinnerDot4 {
+  animation-name: samsungSpin4;
+  transform: rotate(270deg);
+}
+
+.sDot {
+  width: 45%;
+  aspect-ratio: 1;
+  background-color: #0481ff;
+  border-radius: 50%;
+  animation: bounce infinite 2.5s ease-in-out;
+}
+
+#sDot1 {
+  background-color: #00d593; 
+}
+
+@keyframes samsungSpin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes samsungSpin2 {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
+@keyframes samsungSpin3 {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+@keyframes samsungSpin4 {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(630deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+
+}
