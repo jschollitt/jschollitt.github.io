@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+    const inputGravityAngle = document.getElementById('inputGravityAngle');
+    const inputGravityStrength = document.getElementById('inputGravityStrength');
     const inputNumParticles = document.getElementById('inputNumParticles');
     const inputEmitRate = document.getElementById('inputEmitRate');
     const inputParticleRadius = document.getElementById('inputParticleRadius');
@@ -9,6 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const inputColorEnd = document.getElementById('inputColorEnd');
 
     // Get references to the span elements for displaying values
+    const gravityAngleValue = document.getElementById('gravityAngleValue');
+    const gravityStrengthValue = document.getElementById('gravityStrengthValue');
     const numParticlesValue = document.getElementById('numParticlesValue');
     const emitRateValue = document.getElementById('emitRateValue');
     const particleRadiusValue = document.getElementById('particleRadiusValue');
@@ -16,6 +20,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const particleLifeTimeValue = document.getElementById('particleLifeTimeValue');
 
     // Add event listeners to update the displayed values when the sliders change
+    inputGravityAngle.addEventListener('input', () => {
+        gravityAngleValue.textContent = inputGravityAngle.value;
+    });
+    inputGravityStrength.addEventListener('input', () => {
+        gravityStrengthValue.textContent = inputGravityStrength.value;
+    });
     inputNumParticles.addEventListener('input', () => {
         numParticlesValue.textContent = inputNumParticles.value;
     });
@@ -121,6 +131,8 @@ function gameEngine() {
             context,
             x,                                          // position X
             y,                                          // position Y
+            parseFloat(inputGravityAngle.value),              // gravity angle
+            parseFloat(inputGravityStrength.value),           // gravity strength
             parseFloat(inputEmitRate.value),            // emit rate
             parseFloat(inputNumParticles.value),        // particle count
             parseFloat(inputParticleRadius.value),      // particle radius

@@ -101,3 +101,12 @@ section {
 canvas {
     background-color: #000;
 }
+
+input[type="range"] {
+    width: 100%;
+}
+input[type="color"] {
+    width: 50%;
+    aspect-ratio: 1/1;
+    min-height: 50px;
+}

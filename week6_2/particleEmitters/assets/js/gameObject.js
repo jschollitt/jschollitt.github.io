@@ -30,10 +30,13 @@ class GameObject {
 }
 
 class Particle extends GameObject {
-    constructor(context, x, y, vx, vy, radius, lifeTimeLimit, startColor, endColor) {
+    constructor(context, x, y, vx, vy, gAngle, gStrength, radius, lifeTimeLimit, startColor, endColor) {
         super(context, x, y, vx, vy);
 
         // Set default width and height
+        this.gx = Math.cos(gAngle);
+        this.gy = Math.sin(gAngle);
+        this.gStrength = gStrength;
         this.radius = radius;
         this.lifeTime = 0;
         this.lifeTimeLimit = lifeTimeLimit;
@@ -57,6 +60,12 @@ class Particle extends GameObject {
 
     update(secondsPassed) {
         super.update(secondsPassed);
+
+        console.log("velocity pre gravity: " + this.vx + ", ", this.vy);
+        this.vx += this.gx * this.gStrength * secondsPassed;
+        this.vy += this.gy * this.gStrength * secondsPassed;
+
+        console.log("velocity post gravity: " + this.vx + ", ", this.vy);
         // Move with set velocity
         this.x += this.vx * secondsPassed;
         this.y += this.vy * secondsPassed;
@@ -86,10 +95,12 @@ class Particle extends GameObject {
 }
 
 class Emitter {
-    constructor(context, x, y, emitRate, particleCount, particleRadius, particleSpeed, particleLifeTime, colorStart, colorEnd) {
+    constructor(context, x, y, gravityX, gravityY, emitRate, particleCount, particleRadius, particleSpeed, particleLifeTime, colorStart, colorEnd) {
         this.context = context;
         this.x = x;
         this.y = y;
+        this.gravityX = gravityX;
+        this.gravityY = gravityY;
         this.particles = [];
         this.emitRate = emitRate;
         this.particleCount = particleCount;
@@ -109,7 +120,7 @@ class Emitter {
         const speed = this.particleSpeed * (0.5 + Math.random() * 0.5);
         const vx = Math.cos(angle) * speed;
         const vy = Math.sin(angle) * speed;
-        const particle = new Particle(this.context, this.x, this.y, vx, vy, this.particleRadius, this.particleLifeTime, this.colorStart, this.colorEnd);
+        const particle = new Particle(this.context, this.x, this.y, vx, vy, this.gravityX, this.gravityY, this.particleRadius, this.particleLifeTime, this.colorStart, this.colorEnd);
         this.particles.push(particle);
     }
 

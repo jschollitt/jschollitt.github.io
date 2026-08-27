@@ -20,6 +20,27 @@
       <div style="width: 40%; max-width: 400px;">
         <form>
           <div>
+            <label for="numGravityAngle">Gravity Angle</label>
+            <input id="inputGravityAngle"
+                   type="range" 
+                   name="numGravityAngle" 
+                   value="1.5"
+                   min="0.0"
+                   max="6.28"
+                   step="0.05">
+            <span id="gravityAngleValue">0</span>
+          </div>
+          <div>
+            <label for="numGravityStrength">Gravity Strength</label>
+            <input id="inputGravityStrength"
+                   type="range" 
+                   name="numGravityStrength" 
+                   value="100"
+                   min="0"
+                   max="500">
+            <span id="gravityStrengthValue">100</span>
+          </div>
+          <div>
             <label for="numParticles">Number of Particles:</label>
             <input id="inputNumParticles"
                    type="range" 
@@ -79,14 +100,14 @@
             <input type="color" 
                    id="inputColorStart" 
                    name="startColor" 
-                   value="#0000ff">
+                   value="#ff4444">
           </div>
           <div>
             <label for="inputColorEnd">End Color:</label>
             <input type="color" 
                    id="inputColorEnd" 
                    name="endColor" 
-                   value="#ff0000">
+                   value="#0000aa">
           </div>
         </form>
       </div>
